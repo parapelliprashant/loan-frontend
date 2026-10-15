@@ -1,0 +1,66 @@
+/* Links global transition tracking mapping rules */
+.nav-link {
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    border-radius: 6px;
+    transition: all 0.15s ease-in-out;
+}
+
+/* Sidebar hover element states rules setup */
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+/* Selected active tracking element highlight rules hook */
+.nav-link.active:not(.submenu-link) {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    font-weight: 500;
+}
+
+/* Solid background layout container color matching your image layout */
+.custom-submenu {
+    background-color: #164099 !important;
+    /* Rich deeper matching blue */
+    margin-left: -8px;
+    margin-right: -8px;
+    border-radius: 0px;
+}
+
+/* Nested links configuration parameters */
+.submenu-link {
+    color: rgba(255, 255, 255, 0.75) !important;
+    border-radius: 0px !important;
+}
+
+.submenu-link:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: #ffffff !important;
+}
+
+.submenu-link.active {
+    color: #ffffff !important;
+    background-color: rgba(0, 0, 0, 0.15) !important;
+    border-left: 4px solid #ffffff;
+}
+
+/* Custom border divider layout rule integration */
+.border-white-10 {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Native opening display block logic override hook */
+.collapse.show {
+    display: block !important;
+}
+
+.transition-arrow {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Toggle chevron point flip state rotation when target open */
+[aria-expanded="true"] .transition-arrow,
+.nav-link:not(.text-decoration-none)+.show .transition-arrow {
+    transform: rotate(180deg);
+}

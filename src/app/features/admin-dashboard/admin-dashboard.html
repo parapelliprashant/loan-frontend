@@ -1,0 +1,129 @@
+<div class="container-fluid p-0">
+    <div class="d-flex">
+
+        <!-- Premium Blue Sidebar Frame Container -->
+        <nav id="sidebarMenu" class="d-md-block sidebar border-0 position-sticky top-0 shadow-sm"
+            style="width: 280px; min-height: 100vh; background-color: #1e56cc; z-index: 100;">
+
+            <!-- Brand Heading Title -->
+            <div class="pt-4 pb-3 px-4 border-bottom border-white-10">
+                <h3 class="text-white fw-semibold m-0 fs-4">Loan Officer</h3>
+            </div>
+
+            <div class="pt-3 px-0">
+                <ul class="nav flex-column gap-0">
+
+                    <!-- 1. Direct Dashboard Base Endpoint -->
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-white d-flex align-items-center gap-3 py-3" routerLink="/admin"
+                            routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                            <i class="bi bi-grid-1x2 fs-5"></i> Dashboard
+                        </a>
+                    </li>
+
+                    <!-- 2. Customer Management Section (Collapsible) -->
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-white d-flex align-items-center justify-content-between py-3"
+                            style="cursor: pointer;"
+                            (click)="customerMenu.className = (customerMenu.className === 'collapse' ? 'collapse show' : 'collapse')">
+                            <span class="d-flex align-items-center gap-3">
+                                <i class="bi bi-people fs-5"></i> Customer Management
+                            </span>
+                            <i class="bi bi-chevron-down small transition-arrow"></i>
+                        </a>
+                        <div class="collapse" #customerMenu id="customerMenu">
+                            <ul class="nav flex-column custom-submenu small">
+                                <li class="nav-item">
+                                    <a class="nav-link submenu-link py-2.5 ps-5 text-white-50"
+                                        routerLink="/admin/customers/list" routerLinkActive="active">Customer
+                                        Directory</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link submenu-link py-2.5 ps-5 text-white-50"
+                                        routerLink="/admin/customers/verify" routerLinkActive="active">Verification
+                                        Queue</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- 3. Loan Processing Section (Collapsible) -->
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-white d-flex align-items-center justify-content-between py-3"
+                            style="cursor: pointer;"
+                            (click)="processingMenu.className = (processingMenu.className === 'collapse' ? 'collapse show' : 'collapse')">
+                            <span class="d-flex align-items-center gap-3">
+                                <i class="bi bi-card-checklist fs-5"></i> Loan Processing
+                            </span>
+                            <i class="bi bi-chevron-down small transition-arrow"></i>
+                        </a>
+                        <div class="collapse" #processingMenu id="processingMenu">
+                            <ul class="nav flex-column custom-submenu small">
+                                <li class="nav-item">
+                                    <a class="nav-link submenu-link py-2.5 ps-5 text-white-50"
+                                        routerLink="/admin/loans/applied" routerLinkActive="active">Applied Loans</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link submenu-link py-2.5 ps-5 text-white-50"
+                                        routerLink="/admin/loans/approved" routerLinkActive="active">Approved
+                                        Applications</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- 4. Requests & Collections Section (Collapsible) -->
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-white d-flex align-items-center justify-content-between py-3"
+                            style="cursor: pointer;"
+                            (click)="collectionsMenu.className = (collectionsMenu.className === 'collapse' ? 'collapse show' : 'collapse')">
+                            <span class="d-flex align-items-center gap-3">
+                                <i class="bi bi-file-earmark-text fs-5"></i> Requests & Collections
+                            </span>
+                            <i class="bi bi-chevron-down small transition-arrow"></i>
+                        </a>
+                        <div class="collapse" #collectionsMenu id="collectionsMenu">
+                            <ul class="nav flex-column custom-submenu small">
+                                <li class="nav-item">
+                                    <a class="nav-link submenu-link py-2.5 ps-5 text-white-50"
+                                        routerLink="/admin/collections/pending" routerLinkActive="active">Pending
+                                        Requests</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link submenu-link py-2.5 ps-5 text-white-50"
+                                        routerLink="/admin/collections/history" routerLinkActive="active">Collection
+                                        History</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- 5. Support Tickets Direct Link -->
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-white d-flex align-items-center gap-3 py-3" routerLink="/admin/tickets"
+                            routerLinkActive="active">
+                            <i class="bi bi-ticket-perforated fs-5"></i> Support Tickets
+                        </a>
+                    </li>
+
+                    <!-- 6. Logout Endpoint Link -->
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-white d-flex align-items-center gap-3 py-3" routerLink="/logout">
+                            <i class="bi bi-box-arrow-right fs-5"></i> Logout
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Display Canvas Frame Layout Grid -->
+        <main class="flex-grow-1 px-md-4 pt-4 bg-light" style="min-height: 100vh;">
+            <div class="pt-2 pb-2 mb-3 border-bottom">
+                <h1 class="h3 text-dark fw-semibold">Admin Dashboard</h1>
+            </div>
+            <router-outlet></router-outlet>
+        </main>
+
+    </div>
+</div>

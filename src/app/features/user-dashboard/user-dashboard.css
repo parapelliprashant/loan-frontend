@@ -1,0 +1,50 @@
+/* Core link visual variables configurations */
+.nav-link {
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    transition: all 0.15s ease-in-out;
+}
+
+/* Sidebar root hovering effect states setup */
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+/* Deep dark navy sub-menus container matching your reference image */
+.custom-submenu {
+    background-color: #112233 !important;
+    /* Premium custom dark-slate layout mix color */
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+/* Submenu internal item line properties */
+.submenu-link {
+    color: #cbd5e1 !important;
+    /* Clear light silver text typography color */
+    border-radius: 0px !important;
+    font-size: 0.92rem;
+}
+
+.submenu-link:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: #ffffff !important;
+}
+
+/* Selected active link color status highlight logic */
+.submenu-link.active {
+    background-color: #1e3a8a !important;
+    /* Selected royal blue contrast highlight badge */
+    color: #ffffff !important;
+}
+
+/* Smooth structural template expanding display logic handler */
+.collapse.show {
+    display: block !important;
+}
+
+.transition-arrow {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+}

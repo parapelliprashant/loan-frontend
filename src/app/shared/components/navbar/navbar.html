@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg border-bottom" style="background-color: #1e1e1e; border-color: #333 !important;">
+    <div class="container-fluid px-3">
+        <!-- Logo/Brand -->
+        <span class="navbar-brand text-white fw-bold fs-5">LoanPortal</span>
+
+        <!-- Mobile Toggle Button -->
+        <button class="navbar-toggler border-secondary" type="button" data-bs-toggle="collapse"
+            data-bs-target="#loanNavbar" aria-controls="loanNavbar" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon navbar-dark"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="loanNavbar">
+            <ul class="navbar-nav ms-auto gap-3 mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link px-2" routerLink="/admin" routerLinkActive="active">
+                        Admin Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-2" routerLink="/user" routerLinkActive="active">
+                        User Dashboard
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

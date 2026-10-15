@@ -1,0 +1,114 @@
+<div class="container-fluid p-0">
+    <div class="d-flex">
+
+        <!-- Premium Blue Sidebar Frame Container -->
+        <nav id="sidebarMenu" class="d-md-block sidebar border-0 position-sticky top-0 shadow-sm"
+            style="width: 280px; min-height: 100vh; background-color: #0d6efd; z-index: 100;">
+
+            <div class="pt-4 px-0">
+                <ul class="nav flex-column gap-0">
+
+                    <!-- 1. Customer Section Menu Item -->
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-white d-flex align-items-center justify-content-between py-3 rounded-0"
+                            style="cursor: pointer;"
+                            (click)="customerMenu.className = (customerMenu.className === 'collapse' ? 'collapse show' : 'collapse')">
+                            <span class="d-flex align-items-center gap-3 fs-6">
+                                <i class="bi bi-person-circle fs-5"></i> Customer
+                            </span>
+                            <i class="bi bi-chevron-down small transition-arrow"></i>
+                        </a>
+                        <div class="collapse" #customerMenu>
+                            <ul class="nav flex-column custom-submenu small">
+                                <li class="nav-item">
+                                    <a class="nav-link submenu-link py-2.5 ps-5" routerLink="/user/profile"
+                                        routerLinkActive="active">Profile Info</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- 2. Loan Services Section Menu Item -->
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-white d-flex align-items-center justify-content-between py-3 rounded-0"
+                            style="cursor: pointer;"
+                            (click)="loanMenu.className = (loanMenu.className === 'collapse' ? 'collapse show' : 'collapse')">
+                            <span class="d-flex align-items-center gap-3 fs-6">
+                                <i class="bi bi-bank fs-5"></i> Loan Services
+                            </span>
+                            <i class="bi bi-chevron-down small transition-arrow"></i>
+                        </a>
+                        <div class="collapse" #loanMenu>
+                            <ul class="nav flex-column custom-submenu small">
+                                <li class="nav-item">
+                                    <a class="nav-link submenu-link py-2.5 ps-5" routerLink="/user/loans/applied"
+                                        routerLinkActive="active">Applied Loans</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link submenu-link py-2.5 ps-5" routerLink="/user/loans/approved"
+                                        routerLinkActive="active">Approved Applications</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- 3. Payments Section Menu Item (Expanded in your reference image) -->
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-white d-flex align-items-center justify-content-between py-3 rounded-0"
+                            style="cursor: pointer;"
+                            (click)="paymentMenu.className = (paymentMenu.className === 'collapse' ? 'collapse show' : 'collapse')">
+                            <span class="d-flex align-items-center gap-3 fs-6">
+                                <i class="bi bi-credit-card fs-5"></i> Payments
+                            </span>
+                            <i class="bi bi-chevron-down small transition-arrow"></i>
+                        </a>
+                        <!-- "collapse show" ensures it stays open by default like the reference design -->
+                        <div class="collapse show" #paymentMenu>
+                            <ul class="nav flex-column custom-submenu small">
+                                <li class="nav-item">
+                                    <a class="nav-link submenu-link py-2.5 ps-5 text-white-50"
+                                        routerLink="/user/payments/schedule" routerLinkActive="active">EMI Schedule</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link submenu-link py-2.5 ps-5 text-white-50"
+                                        routerLink="/user/payments/make" routerLinkActive="active">Make Payments</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link submenu-link py-2.5 ps-5 text-white-50"
+                                        routerLink="/user/payments/history" routerLinkActive="active">Payment
+                                        History</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link submenu-link py-2.5 ps-5 text-white-50"
+                                        routerLink="/user/payments/penalties" routerLinkActive="active">My Penalties</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- 4. Support Block Direct Endpoint link -->
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-white d-flex align-items-center gap-3 py-3" routerLink="/user/support"
+                            routerLinkActive="active">
+                            <i class="bi bi-chat-square-text fs-5"></i> Support
+                        </a>
+                    </li>
+
+                    <!-- 5. Logout Direct Endpoint link -->
+                    <li class="nav-item px-2 mt-auto">
+                        <a class="nav-link text-white d-flex align-items-center gap-3 py-3" routerLink="/logout">
+                            <i class="bi bi-box-arrow-right fs-5"></i> Logout
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Dynamic Content Area Workspace Canvas Layout Frame -->
+        <main class="flex-grow-1 px-md-4 pt-4 bg-light" style="min-height: 100vh;">
+            <router-outlet></router-outlet>
+        </main>
+
+    </div>
+</div>
